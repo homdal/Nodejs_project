@@ -1,0 +1,62 @@
+export const cards = [
+  {
+    title: "Adventure",
+    subtitle: "starts today",
+    description: "Do you have an adventure yet?",
+    phone: "051-1111112",
+    email: "Adventure@gmail.com",
+    userId: "",
+    bizNumber: "123456",
+    image: {
+      url: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "hiking",
+    },
+    address: {
+      street: "Beit Oren",
+      city: "Beit Oren",
+      country: "Israel",
+      houseNumber: 1,
+      zip: "55555",
+    },
+  },
+  {
+    title: "Party",
+    subtitle: "everyday",
+    description: "Have fun",
+    phone: "054-2472478",
+    email: "Party@gmail.com",
+    userId: "",
+    bizNumber: "789123",
+    image: {
+      url: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "party balloons",
+    },
+    address: {
+      street: "Dizengoff",
+      city: "Tel Aviv-Yafo",
+      country: "Israel",
+      houseNumber: 50,
+      zip: "47589",
+    },
+  },
+  {
+    title: "Relax",
+    subtitle: "treat yourself",
+    description: "Get your vacation bundle now",
+    phone: "052-545454",
+    email: "Vacation@gmail.com",
+    userId: "",
+    bizNumber: "456789",
+    image: {
+      url: "https://images.unsplash.com/photo-1596120236172-231999844ade?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8fDA%3D",
+      alt: "items lying on the beach",
+    },
+    address: {
+      street: "Acadia Beach",
+      city: "Herzliya",
+      country: "Israel",
+      houseNumber: 1,
+      zip: "35215",
+    },
+  },
+];

@@ -1,0 +1,188 @@
+  //USERS
+
+  ### GET All users as admin:
+GET http://localhost:5000/api/v1/users
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkxpbkBnbWFpbC5jb20iLCJpYXQiOjE3MDM1MDk4OTN9.qel2xAhiD84C_NFSUGtCVZ2iiOD88KFVflpi872Exbg
+
+
+### POST register a user:
+POST http://localhost:5000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "Janice",
+    "last": "Janey"
+  },
+  "address": {
+    "street": "Hacohen",
+    "city": "Tel-Aviv",
+    "country": "Israel",
+    "houseNumber": 1,
+    "zip": "5566557"
+  },
+  "phone": "051-5548930",
+  "email": "Janice@bizcards.com",
+  "isBusiness": true,
+  "password": "123456aA!" 
+}
+
+
+### POST Login as an admin user:
+POST http://localhost:5000/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "Admin@bizcards.com",
+  "password": "123456aA!"
+}
+
+
+### POST Login as a business user:
+POST http://localhost:5000/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "Lin@bizcards.com",
+  "password": "123456aA!"
+}
+
+
+### POST Login as a regular user:
+POST http://localhost:5000/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "Ben@bizcards.com",
+  "password": "123456aA!"
+}
+
+
+### GET get user by id as the user or admin:
+GET http://localhost:5000/api/v1/users/6592a37708fd1b1aea8971f2
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJlbkBnbWFpbC5jb20iLCJpYXQiOjE3MDM1MTAxMTd9.QVdJyaq3lxnLmnuBWSZxuX36b_8WcsC-M32gPXtPYLI
+
+
+### PUT update user as the user:
+PUT http://localhost:5000/api/v1/users/6592a37708fd1b1aea8971f8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZjgiLCJpYXQiOjE3MDQzNjUzNDV9.Xp-u11jRYABVKjSqCTKkHxoNnsy23pr0pA5Eu4c2X2I
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "Benjamin",
+    "last": "Benson"
+  },
+  "address": {
+    "street": "Hazal",
+    "city": "Be'er Sheva",
+    "country": "Israel",
+    "houseNumber": 3,
+    "zip": "53478"
+  },
+  "image": {
+    "alt": "Ben",
+    "url": "https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHVzZXJ8ZW58MHx8MHx8fDA%3D"
+  },
+  "phone": "050-8123091",
+  "email": "Ben@bizcards.com",
+  "isBusiness": false,
+  "password": "123456aA!" 
+}
+
+
+### DELETE delete user as the user or admin:
+DELETE http://localhost:5000/api/v1/users/65968d59f897150ae8f216e8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk2OGQ1OWY4OTcxNTBhZThmMjE2ZTgiLCJpYXQiOjE3MDQzNjU0MjF9.YEDctcCWq7h4BawirGKhOKkeEUnTwDZIcGh6gerenrg
+
+
+### PATCH change user's business status:
+PATCH http://localhost:5000/api/v1/users/65897fd2ec9ea67bbdefab73
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQzNjU1NzR9.21dnsUxPeoExUi311DJUCQ3dZtf5Tu6db0gzLO20PwE
+Content-Type: application/json
+
+{
+  "isBusiness":true
+}
+
+
+//CARDS
+
+### GET get all cards:
+GET http://localhost:5000/api/v1/cards/
+
+
+### POST create new card:
+POST http://localhost:5000/api/v1/cards/
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQzNzQ3NzR9.cmR2FYKO4rTs3is5huLXvxhJUbZZKVvG2yvVnfvrEac
+Content-Type: application/json
+
+{
+  "title":"New Card",
+  "subtitle":"for testing",
+  "description":"test",
+  "phone": "050-8123091",
+  "email": "test@gmail.com",
+  "address":{
+   "street": "Azza",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "houseNumber": 1,
+    "zip": "67584"
+  }
+}
+
+
+### GET get the user's cards:
+GET http://localhost:5000/api/v1/cards/my-cards
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZjIiLCJpYXQiOjE3MDQzNzQwNzB9.IiAI-WgInFtmv82NhD0vCiSeX4dwjTfmrZXKCfQspdM
+
+
+### GET get card by id:
+GET http://localhost:5000/api/v1/cards/65898dd2f602469846b53232
+
+
+### PUT update card as it's creator:
+PUT http://localhost:5000/api/v1/cards/65898dd2f602469846b53232
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJlbkBnbWFpbC5jb20iLCJfaWQiOiI2NTg5N2ZkMmVjOWVhNjdiYmRlZmFiNzMiLCJpYXQiOjE3MDM1MTYxMzN9.zkYlpfDuZa-_3KJ-7QWBJJpEUx-eLp5FXHtQP7rcHL0
+Content-Type: application/json
+
+
+{
+   "title":"Updated Card",
+  "subtitle":"a card",
+  "description":"my newest card creation",
+  "phone": "050-8123091",
+  "email": "Wayne@batcave.com",
+  "image":{
+    "url":"https://images.unsplash.com/photo-1703136686959-d6e53e9fab46?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "alt":"funny dog"
+  },
+  "address":{
+   "street": "123 Main St",
+    "city": "Anytown",
+    "country": "Israel",
+    "houseNumber": 20,
+    "zip": "12345"
+  }
+}
+
+### PATCH like or unlike a card:
+PATCH http://localhost:5000/api/v1/cards/6592a37708fd1b1aea8971ff
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQxMDkwNDN9.BP_F82VJOtP3AdE5YNNtYSIww1GMfSR9hdlRvlbksgo
+
+
+### DELETE delete a card by id as creator or admin:
+DELETE http://localhost:5000/api/v1/cards/6596a68ec8c6b69d6a67a72f
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZjIiLCJpYXQiOjE3MDQzNjIzOTl9.405pG6o4WZSnep0sH2QzmV1Ub5KacmnIgIpCUrjSpQY
+
+
+### PATCH change a card's bizNumber as admin:
+PATCH http://localhost:5000/api/v1/cards/business/6596b2268b32c5293998c9d1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQzNzQ3NzR9.cmR2FYKO4rTs3is5huLXvxhJUbZZKVvG2yvVnfvrEac
+Content-Type: application/json
+
+{
+  "bizNumber":111111
+}
+
