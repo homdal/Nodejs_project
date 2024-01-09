@@ -1,11 +1,11 @@
   //USERS
 
-  ### GET All users as admin:
+  ### GET All users (admin only):
 GET http://localhost:5000/api/v1/users
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkxpbkBnbWFpbC5jb20iLCJpYXQiOjE3MDM1MDk4OTN9.qel2xAhiD84C_NFSUGtCVZ2iiOD88KFVflpi872Exbg
 
 
-### POST register a user:
+### POST register a user (anyone):
 POST http://localhost:5000/api/v1/users
 Content-Type: application/json
 
@@ -58,12 +58,12 @@ Content-Type: application/json
 }
 
 
-### GET get user by id as the user or admin:
+### GET get user by id (the user or admin only):
 GET http://localhost:5000/api/v1/users/6592a37708fd1b1aea8971f2
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJlbkBnbWFpbC5jb20iLCJpYXQiOjE3MDM1MTAxMTd9.QVdJyaq3lxnLmnuBWSZxuX36b_8WcsC-M32gPXtPYLI
 
 
-### PUT update user as the user:
+### PUT update user (the user only):
 PUT http://localhost:5000/api/v1/users/6592a37708fd1b1aea8971f8
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZjgiLCJpYXQiOjE3MDQzNjUzNDV9.Xp-u11jRYABVKjSqCTKkHxoNnsy23pr0pA5Eu4c2X2I
 Content-Type: application/json
@@ -91,12 +91,12 @@ Content-Type: application/json
 }
 
 
-### DELETE delete user as the user or admin:
+### DELETE delete user (the user or admin only):
 DELETE http://localhost:5000/api/v1/users/65968d59f897150ae8f216e8
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk2OGQ1OWY4OTcxNTBhZThmMjE2ZTgiLCJpYXQiOjE3MDQzNjU0MjF9.YEDctcCWq7h4BawirGKhOKkeEUnTwDZIcGh6gerenrg
 
 
-### PATCH change user's business status:
+### PATCH change user's business status (the user only):
 PATCH http://localhost:5000/api/v1/users/65897fd2ec9ea67bbdefab73
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQzNjU1NzR9.21dnsUxPeoExUi311DJUCQ3dZtf5Tu6db0gzLO20PwE
 Content-Type: application/json
@@ -108,11 +108,11 @@ Content-Type: application/json
 
 //CARDS
 
-### GET get all cards:
+### GET get all cards (anyone):
 GET http://localhost:5000/api/v1/cards/
 
 
-### POST create new card:
+### POST create new card (business users only):
 POST http://localhost:5000/api/v1/cards/
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQzNzQ3NzR9.cmR2FYKO4rTs3is5huLXvxhJUbZZKVvG2yvVnfvrEac
 Content-Type: application/json
@@ -133,16 +133,16 @@ Content-Type: application/json
 }
 
 
-### GET get the user's cards:
+### GET get the user's cards (need to be logged in):
 GET http://localhost:5000/api/v1/cards/my-cards
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZjIiLCJpYXQiOjE3MDQzNzQwNzB9.IiAI-WgInFtmv82NhD0vCiSeX4dwjTfmrZXKCfQspdM
 
 
-### GET get card by id:
+### GET get card by id (anyone):
 GET http://localhost:5000/api/v1/cards/65898dd2f602469846b53232
 
 
-### PUT update card as it's creator:
+### PUT update card (creator of card only):
 PUT http://localhost:5000/api/v1/cards/65898dd2f602469846b53232
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJlbkBnbWFpbC5jb20iLCJfaWQiOiI2NTg5N2ZkMmVjOWVhNjdiYmRlZmFiNzMiLCJpYXQiOjE3MDM1MTYxMzN9.zkYlpfDuZa-_3KJ-7QWBJJpEUx-eLp5FXHtQP7rcHL0
 Content-Type: application/json
@@ -167,17 +167,17 @@ Content-Type: application/json
   }
 }
 
-### PATCH like or unlike a card:
+### PATCH like or unlike a card (need to be logged in):
 PATCH http://localhost:5000/api/v1/cards/6592a37708fd1b1aea8971ff
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQxMDkwNDN9.BP_F82VJOtP3AdE5YNNtYSIww1GMfSR9hdlRvlbksgo
 
 
-### DELETE delete a card by id as creator or admin:
+### DELETE delete a card by id (creator of card or admin only):
 DELETE http://localhost:5000/api/v1/cards/6596a68ec8c6b69d6a67a72f
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZjIiLCJpYXQiOjE3MDQzNjIzOTl9.405pG6o4WZSnep0sH2QzmV1Ub5KacmnIgIpCUrjSpQY
 
 
-### PATCH change a card's bizNumber as admin:
+### PATCH change a card's bizNumber (admin only):
 PATCH http://localhost:5000/api/v1/cards/business/6596b2268b32c5293998c9d1
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTkyYTM3NzA4ZmQxYjFhZWE4OTcxZWMiLCJpYXQiOjE3MDQzNzQ3NzR9.cmR2FYKO4rTs3is5huLXvxhJUbZZKVvG2yvVnfvrEac
 Content-Type: application/json
